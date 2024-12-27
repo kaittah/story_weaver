@@ -44,7 +44,10 @@ class OpenAI(Vendor):
 
     def __init__(self, api_key: str = None, default_model_name: str = "gpt-4o-mini"):
         self.default_model_name = default_model_name
-        self.client = openai.OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+        if api_key:
+            self.client = openai.OpenAI(api_key=api_key)
+        else:
+            self.client = openai.OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
 
     def complete(self, messages: list[dict], max_tokens=1000, temperature=0, model_name=None):
