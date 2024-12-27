@@ -1,6 +1,7 @@
-import bs4
-import anthropic
 import os
+
+import anthropic
+import bs4
 import openai
 
 class Vendor:
@@ -8,9 +9,12 @@ class Vendor:
 
 class Anthropic(Vendor):
 
-    def __init__(self, default_model_name: str = 'claude-3-5-haiku-20241022'):
+    def __init__(self, api_key: str = None, default_model_name: str = 'claude-3-5-haiku-20241022'):
         self.default_model_name = default_model_name
-        self.client = anthropic.Anthropic()
+        if api_key:
+            self.client = anthropic.Anthropic(api_key=api_key)
+        else:
+            self.client = anthropic.Anthropic()
 
 
     def complete(self, messages: list[dict], max_tokens=1000, temperature=0, model_name=None):
@@ -38,7 +42,7 @@ class Anthropic(Vendor):
 
 class OpenAI(Vendor):
 
-    def __init__(self, default_model_name: str = "gpt-4o-mini"):
+    def __init__(self, api_key: str = None, default_model_name: str = "gpt-4o-mini"):
         self.default_model_name = default_model_name
         self.client = openai.OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
