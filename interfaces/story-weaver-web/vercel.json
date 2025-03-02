@@ -1,12 +1,25 @@
 {
   "buildCommand": "python -m pip install -r requirements.txt && next build",
-  "installCommand": "pip install -r requirements.txt && npm install",
+  "installCommand": "python -mpip install -r requirements.txt && npm install",
   "framework": "nextjs",
   "builds": [
     {
       "src": "api/**/*.py",
       "use": "@vercel/python"
+    },
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/python/(.*)",
+      "dest": "api/python/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/"
     }
   ]
-  
 } 
