@@ -63,6 +63,18 @@ class OpenAI(Vendor):
         )
 
         return completion.choices[0].message.content
+    
+    def complete_structured(self, messages: list[dict], response_format, max_tokens=1000, temperature=0, model_name=None):
+        if model_name is None:
+            model_name = self.default_model_name
+
+        completion = self.client.beta.chat.completions.parse(
+            model=model_name, 
+            messages=messages,
+            response_format=response_format,
+        )
+
+        return completion.choices[0].message.parsed
 
 def split_prompt_to_messages(rendered_prompt):
     messages = []

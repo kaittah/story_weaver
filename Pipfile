@@ -10,6 +10,9 @@ beautifulsoup4 = "*"
 streamlit = "*"
 anthropic = "*"
 story-weaver = {file = ".", editable = true}
+numpy = "*"
+ipywidgets = "*"
+tiktoken = "*"
 
 [dev-packages]
 ipykernel = "*"

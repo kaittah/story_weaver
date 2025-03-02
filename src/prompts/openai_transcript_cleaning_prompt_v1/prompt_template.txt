@@ -1,0 +1,17 @@
+<message role=user>
+<text>
+This is a portion of an interview. Can you copy and paste the parts that are meaty story sentences or details and leave out the rest? Exclude questions from the interviewer. Sometimes the name of the speaker is unreliable.
+You MUST include all words that contribute to the oral style while maintaining clarity.
+You MUST include all names, dates, and proper nouns that are in Michele's story.
+
+Fix grammar, remove filler words, fix obvious transcription errors, and make the text more readable while preserving the core meaning and as much detail and original wording as possible. Keep it conversational but clear. If the segment provided seems to be from an interviewer, return "..." and nothing else. If the segment does not contain any useful information for story-telling purposes, return "..." and nothing else.
+Do not return "I'm sorry, I can't do that" or "There is no useful information", only return "..." in these cases.
+
+If pronouns are ambiguous, you may correct them using context from previous segments. You may also concatenate previous segments to the current one if they have not yet been cleaned. However, you cannot reprocess text you have already processed.
+
+Example input: "Okay um so like I was thinking maybe we could..."
+Example output: "I was thinking we could..."
+####
+{input}
+</text>
+<\message>
