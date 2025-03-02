@@ -15,6 +15,7 @@ ipywidgets = "*"
 tiktoken = "*"
 python-dotenv = "*"
 supabase = "*"
+fastapi = {extras = ["standard"], version = "*"}
 
 [dev-packages]
 ipykernel = "*"

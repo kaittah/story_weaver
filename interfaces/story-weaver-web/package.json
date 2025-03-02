@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "vercel-build": "pip install -r requirements.txt && next build"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.1",

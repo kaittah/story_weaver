@@ -1,0 +1,5 @@
+{
+  "buildCommand": "pip install -r requirements.txt && next build",
+  "installCommand": "pip install -r requirements.txt && npm install",
+  "framework": "nextjs"
+} 
