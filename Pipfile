@@ -13,6 +13,8 @@ story-weaver = {file = ".", editable = true}
 numpy = "*"
 ipywidgets = "*"
 tiktoken = "*"
+python-dotenv = "*"
+supabase = "*"
 
 [dev-packages]
 ipykernel = "*"
