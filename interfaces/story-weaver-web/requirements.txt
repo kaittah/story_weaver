@@ -2,3 +2,5 @@ fastapi
 python-dotenv
 anthropic
 openai
+supabase
+pydantic

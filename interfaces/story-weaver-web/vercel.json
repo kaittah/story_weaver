@@ -8,6 +8,11 @@
       "use": "@vercel/python"
     },
     {
+      "src": "api/copilotkit/**/*",
+      "use": "@vercel/python",
+      "config": { "maxDuration": 60 }
+    },
+    {
       "src": "package.json",
       "use": "@vercel/next"
     }
