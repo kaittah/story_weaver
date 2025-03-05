@@ -7,9 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "vercel-build": "pip install -r requirements.txt && next build"
+    "vercel-build": "python3 -m pip install -r requirements.txt && next build"
   },
   "dependencies": {
+    "@copilotkit/react-core": "^1.6.0",
+    "@copilotkit/react-ui": "^1.6.0",
+    "@copilotkit/runtime": "^1.6.0",
     "@supabase/supabase-js": "^2.49.1",
     "next": "15.2.0",
     "react": "^19.0.0",
